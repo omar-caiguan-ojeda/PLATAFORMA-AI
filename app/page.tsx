@@ -230,8 +230,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container py-24 md:py-32">
-        <div className="mx-auto max-w-4xl text-center space-y-8">
+      <section className="w-full py-24 md:py-32">
+        <div className="container mx-auto max-w-4xl text-center space-y-8 px-4">
           <Badge variant="outline" className="px-4 py-1">
             <Sparkles className="h-3 w-3 mr-2 inline" />
             {t("hero.badge")}
@@ -266,8 +266,8 @@ export default function Home() {
       </section>
 
       {/* Social Proof Ticker */}
-      <section className="border-y bg-muted/50 py-8">
-        <div className="container">
+      <section className="w-full border-y bg-muted/50 py-8">
+        <div className="container mx-auto">
           <p className="text-center text-sm text-muted-foreground mb-6">{t("social.trusted")}</p>
           <InfiniteMarquee speed={30}>
             {techStack.map((tech, index) => (
@@ -283,22 +283,24 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="container py-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-primary">
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2500} />
+      <section className="w-full py-24">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center space-y-2">
+                <div className="text-4xl md:text-5xl font-bold text-primary">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2500} />
+                </div>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* eCommy AI Widget Section */}
-      <section className="bg-gradient-to-b from-primary/5 to-background py-24">
-        <div className="container">
+      <section className="w-full bg-gradient-to-b from-primary/5 to-background py-24">
+        <div className="container mx-auto">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="px-4 py-1">
               <MessageSquare className="h-3 w-3 mr-2 inline" />
@@ -344,8 +346,8 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto hidden md:block">
-            <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 md:p-12 border-2 shadow-xl">
+          <div className="max-w-5xl mx-auto overflow-visible">
+            <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-6 md:p-12 border-2 shadow-xl">
               <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.04] rounded-2xl" />
               <div className="relative">
                 <div className="text-center mb-8">
@@ -354,11 +356,11 @@ export default function Home() {
                   </h3>
                   <p className="text-muted-foreground">
                     {language === "en"
-                      ? "Click the chat button in the bottom right to try the widget"
-                      : "Haz clic en el botón de chat abajo a la derecha para probar el widget"}
+                      ? "The widget integrates seamlessly into your store interface"
+                      : "El widget se integra perfectamente en la interfaz de tu tienda"}
                   </p>
                 </div>
-                <div className="bg-white dark:bg-slate-950 rounded-xl shadow-2xl overflow-hidden border-2">
+                <div className="bg-white dark:bg-slate-950 rounded-xl shadow-2xl overflow-visible border-2">
                   {/* Browser mockup header */}
                   <div className="bg-slate-200 dark:bg-slate-800 px-4 py-3 flex items-center gap-2 border-b">
                     <div className="flex gap-2">
@@ -372,79 +374,78 @@ export default function Home() {
                   </div>
 
                   {/* Store content mockup */}
-                  <div className="p-8 relative min-h-[400px]">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Package className="h-6 w-6 text-primary" />
+                  <div className="p-4 md:p-8 flex flex-col justify-between min-h-[500px]">
+                    <div>
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Package className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg">
+                            {language === "en" ? "Your eCommerce Store" : "Tu Tienda eCommerce"}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {language === "en" ? "Widget integrates seamlessly" : "El widget se integra perfectamente"}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-lg">
-                          {language === "en" ? "Your eCommerce Store" : "Tu Tienda eCommerce"}
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          {language === "en" ? "Widget integrates seamlessly" : "El widget se integra perfectamente"}
-                        </p>
+                      <div className="space-y-4 mb-8">
+                        <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-3/4" />
+                        <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-full" />
+                        <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-5/6" />
                       </div>
-                    </div>
-                    <div className="space-y-4 mb-8">
-                      <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-3/4" />
-                      <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-full" />
-                      <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-5/6" />
                     </div>
 
                     {/* Chat Widget Visual */}
-                    <div className="absolute bottom-8 right-8">
-                      <div className="relative">
+                    <div className="self-end w-full flex justify-end pr-4 pb-4">
+                      <div className="relative w-48 sm:w-56 md:w-72">
                         {/* Chat bubble */}
-                        <div className="mb-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border-2 border-primary/20 w-80 overflow-hidden">
-                          <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">
-                                <MessageSquare className="h-4 w-4" />
+                        <div className="mb-2 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border-2 border-primary/20 w-full overflow-hidden">
+                          <div className="bg-primary text-primary-foreground p-2 sm:p-3 flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white/20 flex items-center justify-center">
+                                <MessageSquare className="h-3 w-3" />
                               </div>
                               <div>
-                                <div className="font-semibold text-sm">eCommy AI</div>
-                                <div className="text-xs opacity-90">
+                                <div className="font-semibold text-xs">eCommy AI</div>
+                                <div className="text-[10px] opacity-90">
                                   {language === "en" ? "Online now" : "En línea"}
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="p-4 space-y-3 max-h-64 overflow-y-auto">
+                          <div className="p-2 sm:p-3 space-y-2 max-h-36 sm:max-h-40 overflow-y-auto">
                             <div className="flex gap-2">
-                              <div className="bg-primary/10 rounded-2xl rounded-tl-none p-3 max-w-[80%]">
-                                <p className="text-sm">
+                              <div className="bg-primary/10 rounded-2xl rounded-tl-none p-1.5 sm:p-2 max-w-[75%]">
+                                <p className="text-[10px] sm:text-xs">
                                   {language === "en"
                                     ? "Hi! How can I help you today?"
                                     : "¡Hola! ¿Cómo puedo ayudarte hoy?"}
                                 </p>
                               </div>
                             </div>
-                            <div className="flex gap-2 flex-wrap">
-                              <button className="text-xs bg-muted hover:bg-muted/80 rounded-full px-3 py-2 transition-colors">
+                            <div className="flex gap-1 flex-wrap">
+                              <button className="text-[8px] sm:text-[9px] bg-muted hover:bg-muted/80 rounded-full px-1.5 py-0.5 sm:px-2 sm:py-1 transition-colors">
                                 {language === "en" ? "Track order" : "Rastrear pedido"}
                               </button>
-                              <button className="text-xs bg-muted hover:bg-muted/80 rounded-full px-3 py-2 transition-colors">
+                              <button className="text-[8px] sm:text-[9px] bg-muted hover:bg-muted/80 rounded-full px-1.5 py-0.5 sm:px-2 sm:py-1 transition-colors">
                                 {language === "en" ? "Find products" : "Buscar productos"}
                               </button>
                             </div>
                           </div>
-                          <div className="p-3 border-t">
-                            <div className="flex items-center gap-2 bg-muted rounded-full px-4 py-2">
+                          <div className="p-2 border-t">
+                            <div className="flex items-center gap-1 bg-muted rounded-full px-2 py-1">
                               <input
                                 type="text"
                                 placeholder={language === "en" ? "Type a message..." : "Escribe un mensaje..."}
-                                className="flex-1 bg-transparent text-sm outline-none"
+                                className="flex-1 bg-transparent text-[10px] outline-none"
                                 disabled
                               />
-                              <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                              <ArrowRight className="h-2.5 w-2.5 text-muted-foreground" />
                             </div>
                           </div>
                         </div>
-                        {/* Chat button */}
-                        <button className="h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-2xl flex items-center justify-center hover:scale-110 transition-transform ml-auto">
-                          <MessageSquare className="h-6 w-6" />
-                        </button>
+                        {/* Chat button eliminado a petición del usuario */}
                       </div>
                     </div>
                   </div>
@@ -456,29 +457,31 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container py-24">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-balance">{t("features.title")}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("features.subtitle")}</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="border-2 hover:border-primary transition-colors">
-              <CardHeader>
-                <feature.icon className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">{feature.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+      <section id="features" className="w-full py-24">
+        <div className="container mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-balance">{t("features.title")}</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("features.subtitle")}</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <feature.icon className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">{feature.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Medusa Admin Section */}
-      <section className="bg-muted/50 py-24">
-        <div className="container">
+      <section className="w-full bg-muted/50 py-24">
+        <div className="container mx-auto">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="px-4 py-1">
               <Shield className="h-3 w-3 mr-2 inline" />
@@ -1119,13 +1122,6 @@ export default function Home() {
               </AccordionItem>
             </Accordion>
           </div>
-
-          {/* Extensions Highlight */}
-          <div className="max-w-3xl mx-auto text-center space-y-4 p-8 bg-background rounded-xl border-2">
-            <Sparkles className="h-12 w-12 text-primary mx-auto" />
-            <h3 className="text-2xl font-bold">{t("admin.extensions.title")}</h3>
-            <p className="text-muted-foreground text-lg">{t("admin.extensions.subtitle")}</p>
-          </div>
         </div>
       </section>
 
@@ -1200,13 +1196,13 @@ export default function Home() {
               <p className="text-lg text-muted-foreground">{t("ai.demo.subtitle")}</p>
             </div>
             <div className="max-w-5xl mx-auto">
-              <div className="relative box-content max-h-[80vh] w-full aspect-[2.164] p-10 bg-background rounded-xl border-2 shadow-lg">
+              <div className="relative w-full aspect-[2.164] bg-background rounded-xl border-2 shadow-lg overflow-hidden">
                 <iframe
                   src="https://app.supademo.com/embed/cmctexb5r17mo9st8dos81eb8?embed_v=2"
                   loading="lazy"
                   title="Demo eCommy AI"
                   allow="clipboard-write"
-                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  className="absolute inset-0 w-full h-full"
                   style={{ border: 0 }}
                 />
               </div>
@@ -1235,12 +1231,13 @@ export default function Home() {
       </section>
 
       {/* Comparison Table */}
-      <section className="container py-24">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("comparison.title")}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("comparison.subtitle")}</p>
-        </div>
-        <div className="max-w-4xl mx-auto">
+      <section className="w-full py-24">
+        <div className="container mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("comparison.title")}</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("comparison.subtitle")}</p>
+          </div>
+          <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-3 gap-4 text-center font-semibold pb-4 border-b">
             <div></div>
             <div className="text-primary">{t("comparison.medusa")}</div>
@@ -1276,12 +1273,13 @@ export default function Home() {
               <div className="text-muted-foreground">{row.traditional}</div>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
       {/* Timeline Section */}
-      <section className="bg-muted/50 py-24">
-        <div className="container">
+      <section className="w-full bg-muted/50 py-24">
+        <div className="container mx-auto">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("timeline.title")}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("timeline.subtitle")}</p>
@@ -1368,12 +1366,13 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="container py-24">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("pricing.title")}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("pricing.subtitle")}</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <section id="pricing" className="w-full py-24">
+        <div className="container mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("pricing.title")}</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("pricing.subtitle")}</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {/* Card 1 - Complete Package */}
           <Card className="border-primary border-2 relative">
             <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">{t("pricing.popular")}</Badge>
@@ -1463,60 +1462,13 @@ export default function Home() {
               </Button>
             </CardContent>
           </Card>
-
-          {/* Card 4 - Data Science */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">{t("pricing.datascience")}</CardTitle>
-              <CardDescription className="text-sm">{t("pricing.datascience.desc")}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-3">
-                <div className="p-3 bg-muted rounded-lg">
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-2xl font-bold">{t("pricing.datascience.setup.price")}</span>
-                    <span className="text-xs text-muted-foreground">{t("pricing.datascience.setup")}</span>
-                  </div>
-                </div>
-                <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
-                  <div className="font-semibold text-sm mb-1">{t("pricing.datascience.monthly")}</div>
-                  <div className="text-xl font-bold text-primary">{t("pricing.datascience.monthly.price")}</div>
-                  <p className="text-xs text-muted-foreground mt-1">{t("pricing.datascience.monthly.desc")}</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-xs text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>{t("pricing.datascience.feature1")}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>{t("pricing.datascience.feature2")}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>{t("pricing.datascience.feature3")}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>{t("pricing.datascience.feature4")}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>{t("pricing.datascience.feature5")}</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-transparent" variant="outline" onClick={() => setIsFormOpen(true)}>
-                {t("pricing.cta.contact")}
-              </Button>
-            </CardContent>
-          </Card>
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-muted/50 py-24">
-        <div className="container">
+      <section id="faq" className="w-full bg-muted/50 py-24">
+        <div className="container mx-auto">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("faq.title")}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("faq.subtitle")}</p>
@@ -1537,7 +1489,8 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="container py-24">
+      <section className="w-full py-24">
+        <div className="container mx-auto">
         <Card className="bg-primary text-primary-foreground border-0">
           <CardContent className="p-6 sm:p-8 md:p-12 text-center space-y-6">
             <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("cta.title")}</h2>
@@ -1557,11 +1510,12 @@ export default function Home() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-muted/50 py-12">
-        <div className="container">
+      <footer className="w-full border-t bg-muted/50 py-12">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2">

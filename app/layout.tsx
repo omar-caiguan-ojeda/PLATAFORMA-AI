@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
@@ -8,12 +8,6 @@ import { Suspense } from "react"
 import { I18nProvider } from "@/lib/i18n-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 
-// export const metadata: Metadata = {
-//   title: "Medusa JS - Headless Commerce Platform | Powered by eCommy AI",
-//   description:
-//     "Build the future of e-commerce with Medusa JS, the open-source headless commerce platform enhanced with eCommy AI for intelligent automation and growth.",
-//   generator: "v0.app",
-// }
 export const metadata: Metadata = {
   title: "Medusa JS - Headless Commerce Platform | Powered by eCommy AI",
   description:
@@ -29,6 +23,13 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 }
 
 export default function RootLayout({
