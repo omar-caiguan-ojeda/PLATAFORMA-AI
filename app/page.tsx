@@ -1148,8 +1148,8 @@ export default function Home() {
                   </Badge>
                   <h3 className="text-4xl md:text-6xl font-bold text-balance mb-6">
                     {language === "en"
-                      ? "Save up to 2 employees ($1,200/month)"
-                      : "Ahorra hasta 2 empleados ($1,200 USD al mes)"}
+                      ? "Save up to 2 employees ($5,400/month)"
+                      : "Ahorra hasta 2 empleados ($5,400 USD al mes)"}
                   </h3>
                   <p className="text-2xl md:text-3xl text-muted-foreground font-semibold text-balance mb-8">
                     {language === "en"
