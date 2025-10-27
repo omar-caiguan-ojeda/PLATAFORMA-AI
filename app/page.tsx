@@ -245,20 +245,6 @@ export default function Home() {
               {t("hero.cta.demo")}
             </Button>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground pt-8">
-            <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-green-600" />
-              <span>{t("hero.check.nocard")}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-green-600" />
-              <span>{t("hero.check.trial")}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-green-600" />
-              <span>{t("hero.check.cancel")}</span>
-            </div>
-          </div>
         </div>
       </section>
 
