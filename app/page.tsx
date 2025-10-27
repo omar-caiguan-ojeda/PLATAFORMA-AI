@@ -1195,15 +1195,21 @@ export default function Home() {
               <h3 className="text-2xl md:text-3xl font-bold">{t("ai.demo.title")}</h3>
               <p className="text-lg text-muted-foreground">{t("ai.demo.subtitle")}</p>
             </div>
-            <div className="max-w-5xl mx-auto">
-              <div className="relative w-full aspect-[2.164] bg-background rounded-xl border-2 shadow-lg overflow-hidden">
+            <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="relative w-full rounded-xl shadow-lg overflow-hidden bg-black" style={{ paddingBottom: '46.2%' }}>
                 <iframe
                   src="https://app.supademo.com/embed/cmctexb5r17mo9st8dos81eb8?embed_v=2"
                   loading="lazy"
                   title="Demo eCommy AI"
                   allow="clipboard-write"
-                  className="absolute inset-0 w-full h-full"
-                  style={{ border: 0 }}
+                  className="absolute top-0 left-0 w-full h-full"
+                  style={{ 
+                    border: 0, 
+                    transform: 'scale(1.05)', 
+                    transformOrigin: 'center',
+                    margin: 0,
+                    padding: 0
+                  }}
                 />
               </div>
             </div>
@@ -1395,10 +1401,16 @@ export default function Home() {
                     <span className="text-xs text-muted-foreground">{t("pricing.complete.ecommy")}</span>
                   </div>
                 </div>
+                <div className="p-3 rounded-lg border border-green-200 bg-green-50 text-green-700 dark:bg-green-900/20 dark:border-green-800 dark:text-green-300">
+                  <div className="text-sm font-semibold">{t("pricing.complete.totaldiscount")}</div>
+                </div>
                 <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
                   <div className="font-semibold text-sm mb-1">{t("pricing.complete.monthly")}</div>
                   <div className="text-xl font-bold text-primary">{t("pricing.complete.monthly.price")}</div>
                   <p className="text-xs text-muted-foreground mt-1">{t("pricing.complete.monthly.desc")}</p>
+                </div>
+                <div className="p-3 bg-muted rounded-lg">
+                  <div className="text-sm">{t("pricing.complete.extra")}</div>
                 </div>
                 <div className="p-3 bg-muted/50 rounded-lg border-2 border-dashed">
                   <div className="font-semibold text-sm mb-1">{t("pricing.complete.addon")}</div>
