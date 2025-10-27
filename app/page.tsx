@@ -241,9 +241,6 @@ export default function Home() {
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">{t("hero.subtitle")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg" onClick={() => setIsFormOpen(true)}>
-              {t("hero.cta.trial")} <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
             <Button size="lg" variant="outline" className="text-lg bg-transparent" onClick={() => setIsFormOpen(true)}>
               {t("hero.cta.demo")}
             </Button>
@@ -1508,9 +1505,6 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-balance">{t("cta.title")}</h2>
             <p className="text-xl opacity-90 max-w-2xl mx-auto text-balance">{t("cta.subtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" variant="secondary" className="text-lg" onClick={() => setIsFormOpen(true)}>
-                {t("cta.trial")} <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
               <Button
                 size="lg"
                 variant="outline"
